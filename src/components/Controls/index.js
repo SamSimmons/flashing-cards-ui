@@ -14,12 +14,14 @@ const Controls = (props) => {
   return (
     <div className="controls">
       <button className="btn" onClick={() => {
-        props.newCard(props.currentCard)
         props.flipCard()
+        props.newCard(props.currentCard)
+        props.guessCorrect()
       }}><i className="material-icons">check_circle</i>CORRECT</button>
       <button className="btn" onClick={() => {
-        props.newCard(props.currentCard)
         props.flipCard()
+        props.newCard(props.currentCard)
+        props.guessIncorrect()
       }}><i className="material-icons">cancel</i>WRONG</button>
       <button className="btn"><i className="material-icons">note_add</i>NOTE</button>
     </div>

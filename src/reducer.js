@@ -1,6 +1,14 @@
 import _ from 'lodash'
+const defaultState = {
+  cards: [],
+  currentCard: {},
+  flipped: false,
+  sessionTotal: 0,
+  sessionCorrect: 0,
+  sessionIncorrect: 0
+}
 
-export default function (state = {cards: [], currentCard: {}, flipped: false }, action) {
+export default function (state = defaultState, action) {
   switch (action.type) {
     case "FLIP_CARD": {
       return {
@@ -28,10 +36,20 @@ export default function (state = {cards: [], currentCard: {}, flipped: false }, 
         currentCard: nextCard
       }
     }
-  //   case "CREATE_CARD": {
-  //     console.log(action)
-  //     return state
-  //   }
+    case "CARD_CORRECT": {
+      return {
+        ...state,
+        sessionTotal: state.sessionTotal += 1,
+        sessionCorrect: state.sessionCorrect += 1
+      }
+    }
+    case "CARD_INCORRECT": {
+      return {
+        ...state,
+        sessionTotal: state.sessionTotal += 1,
+        sessionIncorrect: state.sessionIncorrect += 1
+      }
+    }
   }
   return state
 }

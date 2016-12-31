@@ -8,7 +8,7 @@ const Nav = () => {
       <span>Categories</span>
       <Link to="create">Add</Link>
       <Link to="browse">Browse</Link>
-      <span>Stats</span>
+      <Link to="stats">Stats</Link>
     </nav>
   )
 }

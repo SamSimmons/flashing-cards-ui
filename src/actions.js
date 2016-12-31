@@ -29,3 +29,17 @@ export function createCard(front, back) {
     back
   }
 }
+
+export const CARD_CORRECT = "CARD_CORRECT"
+export function guessCorrect() {
+  return {
+    type: CARD_CORRECT
+  }
+}
+
+export const CARD_INCORRECT = "CARD_INCORRECT"
+export function guessIncorrect() {
+  return {
+    type: CARD_INCORRECT
+  }
+}
